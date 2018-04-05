@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<script src="vue.js"></script>
+
+<div id ='app'>
+  <label @click="doClick">{{message}}</label>
+  <br />
+  <label>What's your name?</label>
+  <br />
+  <input v-model="textValue" />
+  <br />
+  <label>{{answer}}{{textValue}}</label>
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+       el: '#app',
+       data: {
+         answer: 'You are typing: ',
+         message: 'Hello',
+         textValue: ''
+       },
+       watch:{
+         textValue: function(newVal){
+           
+         }
+       },  
+       created: function(){
+         this.message += ' created'
+       },
+       mounted: function(){
+          this.message += ' mounted'
+          this.initData()
+       },
+       destroyed: function(){
+          this.message += ' destroied'
+       },
+       methods: {
+         initData: function(){
+           this.message += ' init data'
+         },      
+         doClick: function(){
+           this.message += ' app click data'
+         },
+         doEnter: function(){
+           
+         }
+       }  
+     })
+   
+   </script>   
+</body>
+</html>
