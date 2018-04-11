@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id='app'>
+   {{message}}
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+       el: '#app',
+       data: {
+         message: 'Hello vuejs 2.0'         
+       },
+       created(){
+         this.message += '>> This phase is created component'
+       },
+       mounted() {
+         this.message += '>> This phase is mounted component'
+       }   
+     });
+  </script>   
+</body>
+</html>
